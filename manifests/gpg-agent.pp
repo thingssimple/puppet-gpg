@@ -16,4 +16,9 @@ class gpg::gpg-agent {
     path => "${home}/.zshrc",
     line => 'eval "$(gpg-agent --daemon)"'
   }
+
+  file_line { "Export GPG_TTY":
+    path => "${home}/.zshrc",
+    line => 'export GPG_TTY=$(tty)'
+  }
 }
