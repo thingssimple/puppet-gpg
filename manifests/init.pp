@@ -1,7 +1,4 @@
 class gpg {
-  include homebrew
-
-  package { "gpg":
-    ensure => present
-  }
+  include gpg::gpg
+  include gpg::gpg2
 }
