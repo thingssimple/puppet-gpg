@@ -1,3 +1,7 @@
 class gpg {
-  anchor { 'Hello_World': }
+  include homebrew
+
+  package { "gpg":
+    ensure => present
+  }
 }
