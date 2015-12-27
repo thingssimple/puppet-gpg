@@ -7,6 +7,14 @@ class gpg::gpg-agent {
 
   $home = "/Users/${::boxen_user}"
 
+  file { "${home}/.gnupg":
+    ensure => directory
+  }
+
+  file { "${home}/.gnupg/gpg.conf":
+    ensure => present
+  }
+
   file_line { "Use gpg-agent":
     path => "${home}/.gnupg/gpg.conf",
     line => 'use-agent'
